@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>C++学习日记二 | 千物语 | 它们都在讲话，你听到了吗</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="学习日记,C++">
+    <meta name="description" content="前言C语言学习日记是博客主人学习C++的笔记，可供各位一同参考。该系列会一直更新到学完为止，有想学C++的同学也可以联系我一起学习。 期间若希望博客主人更新其他类型的文章，可以联系我。 这个系列的风格将会是，不多BB直接上笔记。 常见运算符 算数运算符：+  -  *  &#x2F;  %赋值运算符：=复合运算符：+=，-=，*=， &#x2F;=，%=关系运算符：&amp;gt;,  &amp;lt;,  &amp;gt;=,  &amp;lt;">
+<meta name="keywords" content="学习日记,C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++学习日记二">
+<meta property="og:url" content="https:&#x2F;&#x2F;blog.qiuxiangzhi.top&#x2F;2019&#x2F;08&#x2F;06&#x2F;C++_Learning_Second&#x2F;index.html">
+<meta property="og:site_name" content="千物语">
+<meta property="og:description" content="前言C语言学习日记是博客主人学习C++的笔记，可供各位一同参考。该系列会一直更新到学完为止，有想学C++的同学也可以联系我一起学习。 期间若希望博客主人更新其他类型的文章，可以联系我。 这个系列的风格将会是，不多BB直接上笔记。 常见运算符 算数运算符：+  -  *  &#x2F;  %赋值运算符：=复合运算符：+=，-=，*=， &#x2F;=，%=关系运算符：&amp;gt;,  &amp;lt;,  &amp;gt;=,  &amp;lt;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-25T10:23:59.743Z">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="千物语" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Eternal Qiu</h5>
+          <a href="mailto:Eternal@hnu.edu.cn" target="_blank" rel="noopener" title="Eternal@hnu.edu.cn" class="mail">Eternal@hnu.edu.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Eternal0527" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.qiuxiangzhi.top" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-link"></i>
+                旧博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">C++学习日记二</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">C++学习日记二</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-06T08:00:13.000Z" itemprop="datePublished" class="page-time">
+  2019-08-06
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常见运算符"><span class="post-toc-number">2.</span> <span class="post-toc-text">常见运算符</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#位运算中按位非"><span class="post-toc-number">3.</span> <span class="post-toc-text">位运算中按位非 ~</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#布尔变量：bool-true-false"><span class="post-toc-number">4.</span> <span class="post-toc-text">布尔变量：bool, true/false</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#左移-右移"><span class="post-toc-number">5.</span> <span class="post-toc-text">左移/右移</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#计算数据类型占用内存空间大小"><span class="post-toc-number">6.</span> <span class="post-toc-text">计算数据类型占用内存空间大小</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#运算符优先级"><span class="post-toc-number">7.</span> <span class="post-toc-text">运算符优先级</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三元运算符-“-“"><span class="post-toc-number">8.</span> <span class="post-toc-text">三元运算符 “  ?   :   “</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#if结构"><span class="post-toc-number">9.</span> <span class="post-toc-text">if结构</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#switch结构"><span class="post-toc-number">10.</span> <span class="post-toc-text">switch结构</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#while循环"><span class="post-toc-number">11.</span> <span class="post-toc-text">while循环</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#do-while循环"><span class="post-toc-number">12.</span> <span class="post-toc-text">do while循环</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#for循环"><span class="post-toc-number">13.</span> <span class="post-toc-text">for循环</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如何联系我？"><span class="post-toc-number">14.</span> <span class="post-toc-text">如何联系我？</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-C++_Learning_Second"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">C++学习日记二</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-06 16:00:13" datetime="2019-08-06T08:00:13.000Z"  itemprop="datePublished">2019-08-06</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>C语言学习日记是博客主人学习C++的笔记，可供各位一同参考。该系列会一直更新到<code>学完为止</code>，有想学C++的同学也可以联系我一起学习。</p>
+<p>期间若希望博客主人更新<code>其他类型</code>的文章，可以<code>联系我</code>。</p>
+<p>这个系列的风格将会是，不多BB直接上笔记。</p>
+<h1 id="常见运算符"><a href="#常见运算符" class="headerlink" title="常见运算符"></a>常见运算符</h1><blockquote>
+<p>算数运算符：+  -  *  /  %<br>赋值运算符：=<br>复合运算符：+=，-=，*=， /=，%=<br>关系运算符：&gt;,  &lt;,  &gt;=,  &lt;=,  ==<br>逻辑运算符：&amp;&amp; 并且；|| 或； ！非；<br>位运算符：&amp; 按位与；| 按位或；~ 按位非；^ 按位异或；&lt;&lt; 左移；&gt;&gt; 右移；</p>
+</blockquote>
+<h1 id="位运算中按位非"><a href="#位运算中按位非" class="headerlink" title="位运算中按位非 ~"></a>位运算中按位非 ~</h1><blockquote>
+<p>//位运算使用二进制，运算完后，转换成十进制输出，每一个数位都进行转换<br>//如：~2<br>//由00000010-&gt;11111101-&gt;11111100<br>//第一位为数位，如果为负，则+1；<br>//输出：-3</p>
+</blockquote>
+<h1 id="布尔变量：bool-true-false"><a href="#布尔变量：bool-true-false" class="headerlink" title="布尔变量：bool, true/false"></a>布尔变量：bool, true/false</h1><blockquote>
+<p>1|bool flag = true;<br>2|cout &lt;&lt; boolalpha;//让布尔变量以true/false的形式输出<br>3|cout &lt;&lt; (14&gt;23) &lt;&lt; endl;<br>4|//输出结果：false</p>
+</blockquote>
+<h1 id="左移-右移"><a href="#左移-右移" class="headerlink" title="左移/右移"></a>左移/右移</h1><blockquote>
+<p>cout &lt;&lt; 3;  //重载，作用发生变化<br>//左移即在转成二进制后，进行左移位数<br>//如 2 &lt;&lt; 3;       //左移<br>//则2 = 000000<code>10</code> -&gt; 000<code>10</code>000 -&gt; 16<br>//用于处理二进制数字，2的倍数，效率高</p>
+</blockquote>
+<h1 id="计算数据类型占用内存空间大小"><a href="#计算数据类型占用内存空间大小" class="headerlink" title="计算数据类型占用内存空间大小"></a>计算数据类型占用内存空间大小</h1><blockquote>
+<p>sizeof(type_name)<br>结果以字节为单位<br>如：sizeof( int )，sizeof(‘ \n ‘)<br>输出：4，1</p>
+</blockquote>
+<h1 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h1><blockquote>
+<p>cout &lt;&lt; ! ( ( 18 + 45 % 3* 5)&gt;16 ) &lt;&lt; endl;<br>输出结果：true（1）<br>正常逻辑，没有什么特别的</p>
+</blockquote>
+<h1 id="三元运算符-“-“"><a href="#三元运算符-“-“" class="headerlink" title="三元运算符 “  ?   :   “"></a>三元运算符 “  ?   :   “</h1><blockquote>
+<p>1|int num =5 &gt; 6 ? 10 : 12;<br>2|cout &lt;&lt; num;<br>3|//中文解释：5大于6吗？若为真则为10，否则为12。<br>4|//输出：12</p>
+</blockquote>
+<h1 id="if结构"><a href="#if结构" class="headerlink" title="if结构"></a>if结构</h1><blockquote>
+<p>1|if( true ){<br>2|    //coding part 1;<br>3|}<br>4|else{<br>5|    //coding part 2;<br>6|}</p>
+</blockquote>
+<h1 id="switch结构"><a href="#switch结构" class="headerlink" title="switch结构"></a>switch结构</h1><blockquote>
+<p>1|switch( ture ){<br>2|    case 常量1:<br>3|        //coding part;<br>4|        break;<br>5|    case 常量2:<br>6|        //coding part;<br>7|        break;<br>8|    case 常量n:<br>9|        //coding part;<br>10|        break;<br>11|    default:<br>12|        //coding part;<br>13|        break;<br>14|}</p>
+</blockquote>
+<h1 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h1><blockquote>
+<p>1|while( 判断条件 ){<br>2|    //代码块;<br>3|    //循环变量;<br>4|}</p>
+</blockquote>
+<h1 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do while循环"></a>do while循环</h1><blockquote>
+<p>1|do {<br>2|    //循环变量;<br>3|    //循环代码块;<br>4|}while( 循环结束条件 )</p>
+</blockquote>
+<h1 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h1><blockquote>
+<p>1|for( 初始条件 ; 结束条件 ; 循环变量 ){<br>2|    //代码块<br>3|    //break，用于跳出循环<br>4|    //continue，用于跳过该次循环<br>5|}</p>
+</blockquote>
+<h1 id="如何联系我？"><a href="#如何联系我？" class="headerlink" title="如何联系我？"></a>如何联系我？</h1><p>学<code>C++</code>/<code>博客</code>可加我QQ：<code>1941256841</code><br>玩黑苹果/Linux入群讨论：<code>706372078</code><br>QQ：1941256841，加我请注明来意</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-10-25T10:23:59.743Z" itemprop="dateUpdated">2019-10-25 18:23:59</time>
+</span><br>
+
+
+        
+        转载请注明出处，https://blog.qiuxiangzhi.top。
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.qiuxiangzhi.top">
+            <img src="/img/avatar.jpg" alt="Eternal Qiu">
+            Eternal Qiu
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/" rel="tag">学习日记</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_Second/&title=《C++学习日记二》 — 千物语&pic=https://blog.qiuxiangzhi.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_Second/&title=《C++学习日记二》 — 千物语&source=有朋自远方来，不亦乐乎~" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_Second/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《C++学习日记二》 — 千物语&url=https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_Second/&via=https://blog.qiuxiangzhi.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_Second/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/08/06/C++_Learning_Third/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">C++学习日记三</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/08/06/C++_Learning_First/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">C++学习日记一</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "lWjaSK34W33pDPVqj8C9Sj0u-MdYXbMMI",
+            appKey: "sUkEx0dTtTLiICViamcUemAY",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请作者喝一杯咖啡吧~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Eternal Qiu &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_Second/&title=《C++学习日记二》 — 千物语&pic=https://blog.qiuxiangzhi.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_Second/&title=《C++学习日记二》 — 千物语&source=有朋自远方来，不亦乐乎~" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_Second/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《C++学习日记二》 — 千物语&url=https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_Second/&via=https://blog.qiuxiangzhi.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_Second/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNklEQVR42u3awU7EMAxF0f7/T5cNCyTUzn12ZqDOzQoNo9SnSMaOcxx4nb/Wz8/vv3/1zatPrvZcsGTIkPFYxnm77h/AH3kf4hWYxCZDhox9GHxrAiOv4D5oHpsMGTJkpAkxTeLp65MhQ4aMWsIlgZIE/cf/N2TIkPHvGbWA0ra2xljci8uQIeOBDH5Y9vmf3zLfkCFDxqMYZ7g6c8N3xPO9swwZMkYz+GPSoSYv8lCDSgaiMmTIGMogjWgfWWtrg09kyJCxDaNWDpIku+qKxuVvZciQMZrRH0+mY85a4kbJWoYMGUMZtQFkmohJuuRJP0i1MmTIGMfoX54gu6VpHTXVMmTIGM0gm9YO/dPWlI8K0F9GhgwZgxi11pRkuXQk2RqgypAhYwMGSbikBEyTZjrajJtYGTJkjGD0L3gV69DwOA/tIEOGjKGMVYVgZ5BZu0CGKlwZMmQMZXQa1LXlI0/QMmTImM1Ij+Z58cevU6wqWGXIkDGbQcov3sSSEFtjAN7WypAhYxCDX8+6T6+dczASw4vnypAhYxsGGhaGR/m1opA3xjJkyNiHQUKvDQOCCxPpEVvtNocMGTIexTjD1bmcwYOL95EhQ8ZoRu0IrFbk8eReLA1lyJAxmpEedfEHkya2NmCQIUPGnozasVdnh1rZ9+LOiAwZMmSUQowDwlcujs67lCFDxpYMPuxMXwEiyZAhYwMGHwZ0jslqw4nFx20yZMh4ICO94rAK2aEWh5oyZMh4HuMLQLiyUJJTggYAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

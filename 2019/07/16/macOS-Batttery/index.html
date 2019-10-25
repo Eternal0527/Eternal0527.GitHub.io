@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>macOS驱动-电池补丁 | 千物语 | 它们都在讲话，你听到了吗</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="macOS,电池补丁">
+    <meta name="description" content="前言对于笔记本用户而言，黑苹果让人烦恼的事情有四大件，显卡、电池、声卡、无线网卡，这里面每一项的缺失都严重影响体验。而显卡驱动通常情况下比较简单，声卡只要有对应Layout ID轻而易举，无线网卡要么可以驱动要么直接不行，只有电池是可以驱动但却要修改DSDT。 对于没有碰过太多代码，不清楚DSDT表所代表意思的同学来说，修改它实现正确的电量显示简直是一大恶梦。今天通过实例，帮助理解如何修改DSDT">
+<meta name="keywords" content="macOS,电池补丁">
+<meta property="og:type" content="article">
+<meta property="og:title" content="macOS驱动-电池补丁">
+<meta property="og:url" content="https:&#x2F;&#x2F;blog.qiuxiangzhi.top&#x2F;2019&#x2F;07&#x2F;16&#x2F;macOS-Batttery&#x2F;index.html">
+<meta property="og:site_name" content="千物语">
+<meta property="og:description" content="前言对于笔记本用户而言，黑苹果让人烦恼的事情有四大件，显卡、电池、声卡、无线网卡，这里面每一项的缺失都严重影响体验。而显卡驱动通常情况下比较简单，声卡只要有对应Layout ID轻而易举，无线网卡要么可以驱动要么直接不行，只有电池是可以驱动但却要修改DSDT。 对于没有碰过太多代码，不清楚DSDT表所代表意思的同学来说，修改它实现正确的电量显示简直是一大恶梦。今天通过实例，帮助理解如何修改DSDT">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-25T10:26:57.525Z">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="千物语" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Eternal Qiu</h5>
+          <a href="mailto:Eternal@hnu.edu.cn" target="_blank" rel="noopener" title="Eternal@hnu.edu.cn" class="mail">Eternal@hnu.edu.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Eternal0527" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.qiuxiangzhi.top" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-link"></i>
+                旧博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">macOS驱动-电池补丁</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">macOS驱动-电池补丁</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-16T02:45:23.000Z" itemprop="datePublished" class="page-time">
+  2019-07-16
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#警告"><span class="post-toc-number">2.</span> <span class="post-toc-text">警告</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#说明"><span class="post-toc-number">3.</span> <span class="post-toc-text">说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开始"><span class="post-toc-number">4.</span> <span class="post-toc-text">开始</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#结束"><span class="post-toc-number">5.</span> <span class="post-toc-text">结束</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#联系我"><span class="post-toc-number">6.</span> <span class="post-toc-text">联系我</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-macOS-Batttery"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">macOS驱动-电池补丁</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-16 10:45:23" datetime="2019-07-16T02:45:23.000Z"  itemprop="datePublished">2019-07-16</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>对于笔记本用户而言，黑苹果让人烦恼的事情有四大件，显卡、电池、声卡、无线网卡，这里面每一项的缺失都严重影响体验。而显卡驱动通常情况下比较简单，声卡只要有对应Layout ID轻而易举，无线网卡要么可以驱动要么直接不行，只有电池是可以驱动但却要修改DSDT。</p>
+<p>对于没有碰过太多代码，不清楚DSDT表所代表意思的同学来说，修改它实现正确的电量显示简直是一大恶梦。今天通过实例，帮助理解如何修改DSDT，制作属于自己的Maciasl电池补丁。本文基于<strong>Rehabman补丁教程</strong>、<strong>远景一位大佬的补丁教程</strong>，整合而成。</p>
+<h1 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h1><p>请注意，本贴只做技术与学习探讨，不做任何商业和违法用途。同时请各位在实践学习后，于24小时内自行消除。</p>
+<p>可能涉及到的法律问题：<a href="https://www.apple.com/legal/sla/docs/macOS1014.pdf" target="_blank" rel="noopener"><strong>macOS1014</strong></a>；</p>
+<p><strong>如果您是非个人用户或用作商业用途，您应该观看上述材料中所提及问题，并不要接触实施下述操作。</strong></p>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>没有耐心的同学还是建议直接左转淘宝，或者寻找大佬帮你更改，下面的内容<strong>不适合完全小白</strong>，需要一定的折腾精神和基础。</p>
+<p>该补丁需要配合一个Rehabman的一个开源驱动使用，<a href="https://github.com/RehabMan/OS-X-ACPI-Battery-Driver" target="_blank" rel="noopener"><strong>链接在这里</strong></a>。</p>
+<p>工具下载：<a href="https://github.com/RehabMan/OS-X-MaciASL-patchmatic" target="_blank" rel="noopener"><strong>Maciasl</strong></a>（提供的链接为Rehubman GitHub项目地址）</p>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p>呃。。。我没耐心写了，还是放上我收藏的帖子，给各位自行学习吧。。。。emmmmm，实在还是懒。</p>
+<h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><p>这是远景一位大佬的帖子，我发现这帖子的逻辑顺序已经比较完善，而且附有补充总结知识，非常完善。适合将其彻底搞懂，也适合跳读，直接制作自己的补丁。</p>
+<p>值得一提的是，此处可以直接提取DSDT后，<strong>直接编辑DSDT/SSDT</strong>。不需要iasl进行反编译，<strong>建议使用Clover</strong>提取DSDT/SSDT。</p>
+<p>以下是阅读顺序与说明：</p>
+<ol>
+<li><a href="http://bbs.pcbeta.com/viewthread-1751487-1-1.html" target="_blank" rel="noopener"><strong>开始学习贴</strong></a></li>
+<li><a href="http://bbs.pcbeta.com/viewthread-1751497-1-1.html" target="_blank" rel="noopener"><strong>32位以上拆分贴</strong></a></li>
+<li><a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1752075&highlight=%B5%E7%B3%D8%B2%B9%B6%A1" target="_blank" rel="noopener"><strong>总结经验贴</strong></a></li>
+</ol>
+<p>转自<a href="http://i.pcbeta.com/space-uid-2937488.html" target="_blank" rel="noopener"><strong>yearjinheng</strong></a>，侵权删，感谢<a href="http://i.pcbeta.com/space-uid-2937488.html" target="_blank" rel="noopener"><strong>yearjinheng</strong></a>。</p>
+<h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a><strong>联系我</strong></h1><p>百度贴吧：<a href="http://tieba.baidu.com/home/main?id=935ee68891e582bbe4bda0e69c89e6848fe8a781e5958ae764?t=1497700361&fr=userbar" target="_blank" rel="noopener"><strong>我傻你有意见啊</strong></a><br>远景ID：<a href="http://i.pcbeta.com/space-uid-4847572.html" target="_blank" rel="noopener"><strong>qiuxiangzhi</strong></a><br>QQ：1941256841，加我请注明来意</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-10-25T10:26:57.525Z" itemprop="dateUpdated">2019-10-25 18:26:57</time>
+</span><br>
+
+
+        
+        转载请注明出处，https://blog.qiuxiangzhi.top。
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.qiuxiangzhi.top">
+            <img src="/img/avatar.jpg" alt="Eternal Qiu">
+            Eternal Qiu
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/macOS/" rel="tag">macOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%B5%E6%B1%A0%E8%A1%A5%E4%B8%81/" rel="tag">电池补丁</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.qiuxiangzhi.top/2019/07/16/macOS-Batttery/&title=《macOS驱动-电池补丁》 — 千物语&pic=https://blog.qiuxiangzhi.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.qiuxiangzhi.top/2019/07/16/macOS-Batttery/&title=《macOS驱动-电池补丁》 — 千物语&source=有朋自远方来，不亦乐乎~" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.qiuxiangzhi.top/2019/07/16/macOS-Batttery/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《macOS驱动-电池补丁》 — 千物语&url=https://blog.qiuxiangzhi.top/2019/07/16/macOS-Batttery/&via=https://blog.qiuxiangzhi.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.qiuxiangzhi.top/2019/07/16/macOS-Batttery/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/22/macOS-Audio/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">macOS驱动-声卡驱动</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/15/macOS-Guide/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">macOS安装-小白入门</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "lWjaSK34W33pDPVqj8C9Sj0u-MdYXbMMI",
+            appKey: "sUkEx0dTtTLiICViamcUemAY",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请作者喝一杯咖啡吧~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Eternal Qiu &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.qiuxiangzhi.top/2019/07/16/macOS-Batttery/&title=《macOS驱动-电池补丁》 — 千物语&pic=https://blog.qiuxiangzhi.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.qiuxiangzhi.top/2019/07/16/macOS-Batttery/&title=《macOS驱动-电池补丁》 — 千物语&source=有朋自远方来，不亦乐乎~" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.qiuxiangzhi.top/2019/07/16/macOS-Batttery/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《macOS驱动-电池补丁》 — 千物语&url=https://blog.qiuxiangzhi.top/2019/07/16/macOS-Batttery/&via=https://blog.qiuxiangzhi.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.qiuxiangzhi.top/2019/07/16/macOS-Batttery/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aQZICIQwFUO9/aWc7i2n9P+hUNTxWlmUDrxcRkjwe8XjG4/Xv81Ue3xgYGBi3ZbTb+v3N1Qyv13r9VPI6/lgFAwPjAEayZLv86/mTgJvsDQMDA6NltCE7D+sYGBgYOaP9TTJDEsQxMDAw8umS7V5dNa++aYM4BgbGaYz8evn/n79S38DAwLgV41mO9tn1YB2tgoGBsTUjD3ArR722/WK4HwwMjGMYeevDeoNX+2qKrCEGBsZGjFm5cQWTHDTrF4qBgXEkY9aqlbdltOw3a2FgYBzAyAPcypL5US9P8w3PthgYGLdi5NtNFpuFy7wI8WZODAyMTRl5OGsXa9N57eX28miIgYGxHWPpKFYG5ZXOtShth4GBcQwjb6Fowe0hMk//YWBg7M1IjlzrabiVwBqFaQwMjAMY680Qsyaw2Qxvmi0wMDC2Y8xSYPlBsD0UtmEaAwPjBMZsK7MCZ7vpvESBgYGxN2P96JZQ89g/K2RiYGCcwGgLA22obTc6LB5gYGAcwMiLl21OPr8S55+LKgcGBsbWjGSK9cDaJtoun8LAwNiU8SxHy1i/ytb3bwwMjO0Y327YaksL7R9ADcPAwLgto011tUE5b9FYavXAwMA4gDFLw81ScnUqLUFiYGBgxAG3bfzKi6bFPRgDA+N4Rt6i0Sbm2uazj/1vYGBg3ITRtnPNkmKzZo4Pp9swMDBuyFjp1MinbtNzXylqYmBg3I/xA5In+ggb9n84AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

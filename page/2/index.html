@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>千物语 | 它们都在讲话，你听到了吗</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="千物语">
+    <meta name="description" content="有朋自远方来，不亦乐乎~">
+<meta name="keywords" content="千物语">
+<meta property="og:type" content="website">
+<meta property="og:title" content="千物语">
+<meta property="og:url" content="https:&#x2F;&#x2F;blog.qiuxiangzhi.top&#x2F;page&#x2F;2&#x2F;index.html">
+<meta property="og:site_name" content="千物语">
+<meta property="og:description" content="有朋自远方来，不亦乐乎~">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="千物语" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Eternal Qiu</h5>
+          <a href="mailto:Eternal@hnu.edu.cn" target="_blank" rel="noopener" title="Eternal@hnu.edu.cn" class="mail">Eternal@hnu.edu.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Eternal0527" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.qiuxiangzhi.top" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-link"></i>
+                旧博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">千物语</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header index-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">千物语</h1>
+        <h5 class="subtitle">
+            
+                它们都在讲话，你听到了吗
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+<div class="container body-wrap">
+
+    <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-macOS-IntelFramBuffer"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-08-05 09:17:20" datetime="2019-08-05T01:17:20.000Z"  itemprop="datePublished">2019-08-05</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/08/05/macOS-IntelFramBuffer/">macOS-如何驱动核显/卡FramBuffer？</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        前言如果你的核显显存只有7M，那么你的macOS体验绝对是无比糟糕的。那么，我们应该怎么解决呢？
+警告请注意，本贴只做技术与学习探讨，不做任何商业和违法用途。同时请各位在实践学习后，于24小时内自行消除。
+可能涉及到的法律问题：macOS1014；
+如果您是非个人用户或用作商业用途，您应该观看上述材料中所提及问题，并不要接触实施下述操作。
+问题详述核显是一个可以说看起来很麻烦，也可以说超级简...
+    
+
+        <a href="/2019/08/05/macOS-IntelFramBuffer/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FramBuffer/" rel="tag">FramBuffer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/macOS/" rel="tag">macOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%B8%E6%98%BE/" rel="tag">核显</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-macOS-Siri"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-08-05 08:54:15" datetime="2019-08-05T00:54:15.000Z"  itemprop="datePublished">2019-08-05</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/08/05/macOS-Siri/">macOS-如何使Siri发声</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        前言Siri作为智障代表，虽然没有实用价值，但是有它还是会感觉自己的macOS又更像是那么一回事了。下面，我在这唠叨一下如何使你的Siri工作起来，方法很简单，哪里都可以搜索到。
+警告请注意，本贴只做技术与学习探讨，不做任何商业和违法用途。同时请各位在实践学习后，于24小时内自行消除。
+可能涉及到的法律问题：macOS1014；
+如果您是非个人用户或用作商业用途，您应该观看上述材料中所提及问...
+    
+
+        <a href="/2019/08/05/macOS-Siri/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Siri/" rel="tag">Siri</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/macOS/" rel="tag">macOS</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-C++_Install-Guide"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-08-01 11:45:42" datetime="2019-08-01T03:45:42.000Z"  itemprop="datePublished">2019-08-01</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/08/01/C++_Install-Guide/">C++初步认识</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        前言一个标准的学习过程应该从 HelloWorld.exe 开始，初步代码如下#include &lt;iostream&gt;using namespace std;
+int main(){        cout &lt;&lt; &quot;!!!HelloWorld!!!&quot; &lt;&lt; endl;        return 0;}
+当然，学习任何一门语言之前都应该要...
+    
+
+        <a href="/2019/08/01/C++_Install-Guide/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Atom/" rel="tag">Atom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Blog-Code-Guide"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-07-26 23:41:56" datetime="2019-07-26T15:41:56.000Z"  itemprop="datePublished">2019-07-26</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/07/26/Blog-Code-Guide/">Blog-Gridea与Code Pages</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        对于想要在网上有自己的一个博客网站的人来说，常用的有 Wordpress、Typecho 这些免费搭建工具。但是对一些小白来说，需要接触到域名、空间购买、数据库设置这些，还是有些难度的。在前段时间，偶然在网上发现了这个Gridea工具。Gridea 是 一个基于Github Pages 和 Coding Page 静态博客管理工具。我被它简洁清新的界面所吸引，于是先将博客迁移到 Github...
+    
+
+        <a href="/2019/07/26/Blog-Code-Guide/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Code-Pages/" rel="tag">Code Pages</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Blog-Github-Guide"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-07-26 23:10:29" datetime="2019-07-26T15:10:29.000Z"  itemprop="datePublished">2019-07-26</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/07/26/Blog-Github-Guide/">Blog-Gridea与Github Pages</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        当下大多数人可能已经对 Github Pages 不再陌生，它是很多喜欢写文章的人第一次接触的用于免费搭建博客建一个简洁却又不失优雅的个人博客 ，直到现在互联网上还有大量的基于它的个人博客，也有大量的搭建方法的教程。
+然而搭建虽然简单，但是管理和推送文章却相对麻烦不少，在官方的教程里，我们需要经历繁琐的步骤才能发布一篇文章和修改个人空间界面。
+使用 Gridea 在 Github Pages...
+    
+
+        <a href="/2019/07/26/Blog-Github-Guide/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github-Pages/" rel="tag">Github Pages</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-macOS-Audio"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-07-22 20:58:40" datetime="2019-07-22T12:58:40.000Z"  itemprop="datePublished">2019-07-22</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/07/22/macOS-Audio/">macOS驱动-声卡驱动</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        前言作为影响macOS体验的三卡之一，声卡是与人交互的一个重要维度，也是一个能让你体会到macOS对硬件优化的一个点。本篇文章旨在教学如何驱动常见普通声卡。
+警告请注意，本贴只做技术与学习探讨，不做任何商业和违法用途。同时请各位在实践学习后，于24小时内自行消除。
+可能涉及到的法律问题：macOS1014；
+如果您是非个人用户或用作商业用途，您应该观看上述材料中所提及问题，并不要接触实施下述...
+    
+
+        <a href="/2019/07/22/macOS-Audio/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/macOS/" rel="tag">macOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A3%B0%E5%8D%A1/" rel="tag">声卡</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-macOS-Batttery"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-07-16 10:45:23" datetime="2019-07-16T02:45:23.000Z"  itemprop="datePublished">2019-07-16</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/07/16/macOS-Batttery/">macOS驱动-电池补丁</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        前言对于笔记本用户而言，黑苹果让人烦恼的事情有四大件，显卡、电池、声卡、无线网卡，这里面每一项的缺失都严重影响体验。而显卡驱动通常情况下比较简单，声卡只要有对应Layout ID轻而易举，无线网卡要么可以驱动要么直接不行，只有电池是可以驱动但却要修改DSDT。
+对于没有碰过太多代码，不清楚DSDT表所代表意思的同学来说，修改它实现正确的电量显示简直是一大恶梦。今天通过实例，帮助理解如何修改D...
+    
+
+        <a href="/2019/07/16/macOS-Batttery/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/macOS/" rel="tag">macOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%B5%E6%B1%A0%E8%A1%A5%E4%B8%81/" rel="tag">电池补丁</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-macOS-Guide"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-07-15 21:55:00" datetime="2019-07-15T13:55:00.000Z"  itemprop="datePublished">2019-07-15</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/07/15/macOS-Guide/">macOS安装-小白入门</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        前言该教程我其实已经在贴吧发过一个帖子了，这个帖子在吧里面的反响还不错，估计是因为当时黑果吧太多打广告骗钱的人，导致我这样的帖子也能成为精品。当然，感谢后来的吧主夜白给我加精，他目前在申请多个吧的吧主，祝他成功吧。
+但是我认为之前的贴子并不好，不是很系统。毕竟贴吧更多的是想到哪里写到哪里，分享比不上教程详细。所以我打算写一个教程来引导小白入坑，不在本文介绍那些复杂需要折腾的驱动问题。
+警告请...
+    
+
+        <a href="/2019/07/15/macOS-Guide/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/macOS/" rel="tag">macOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E8%A3%85/" rel="tag">安装</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+    </ul>
+
+    
+<nav id="page-nav">
+    <div class="inner">
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </div>
+</nav>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Eternal Qiu &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.qiuxiangzhi.top/page/2/&title=千物语&pic=https://blog.qiuxiangzhi.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.qiuxiangzhi.top/page/2/&title=千物语&source=有朋自远方来，不亦乐乎~" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.qiuxiangzhi.top/page/2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=千物语&url=https://blog.qiuxiangzhi.top/page/2/&via=https://blog.qiuxiangzhi.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.qiuxiangzhi.top/page/2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByklEQVR42u3aQY6DMAwF0N7/0h1pNIuR2sJ3HFwWLyvUovBgYSXfeTzi8fwd/69fx6c7kzk3D1xc3Db3eTjWuK+UtTnfvBIuLu4gt1+8kt+Tz3Fiw8XFvRk3KVVJ2coXQ7i4uPfnVh+ZL4NwcXHvyd27pekUvm17NVxc3AZ3LTDde315vouLi7upK3FcUPJYpP/cv3lwcXFHuElg0Y9W89AkKnO4uLgj3DwezQtWdeuSvDAuLu53uceLkmqjpRqMRoUVFxf3Mm4Sg/YLXLWhcrLtwcXFHedWj1ysHb+ohi8fCxkuLu4F3LxzUW3KVuOVbY1VXFzcTdw8kui0SdbiV1xc3HlutTWSByXVA1jRpgsXF3ecu1bC8u1Np6GLi4s7z80bqNWtzq4jF7i4uJPcxUNRSyPfCJ0ssHBxcS/mJlOsLVCSCKbadMHFxZ3k5oUmb3gsZrfHnwwXF3eQm49k0moMunjAAhcX9zJuf2mSt2A795dfBhcXt82txqadExHV+PXN/Li4uIPctUMYV8QoUb6Li4t7G25nKZO3ZrcVMlxc3K9yqyUvL1u4uLjf5eahZ7VI5f9G5RIXF3eEuyswLRSjpQAFFxd3hPsDoakGHFabe34AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>为了写作业，我写了个Python程序 | 千物语 | 它们都在讲话，你听到了吗</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Python">
+    <meta name="description" content="题目课堂上老师跟我们讲了这个问题，如何使用Excel进行手动仿真（其实只是讲了一些逻辑而已~）： 某一排队系统，假定顾客随机地分别以1-8min（精度取到分钟）的间隔到达,到达间隔时间值为等概率出现。服务时间为1-6min（精度取到分钟），其出现的概率分别为0.10，0.20，0.30，0.25，0.10，0.05。为了说明问题，这里我们仅仿真10个顾客作为运行长度。并且忽略初始条件的影响。 分析">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为了写作业，我写了个Python程序">
+<meta property="og:url" content="https:&#x2F;&#x2F;blog.qiuxiangzhi.top&#x2F;2019&#x2F;09&#x2F;22&#x2F;Modeling-Homework&#x2F;index.html">
+<meta property="og:site_name" content="千物语">
+<meta property="og:description" content="题目课堂上老师跟我们讲了这个问题，如何使用Excel进行手动仿真（其实只是讲了一些逻辑而已~）： 某一排队系统，假定顾客随机地分别以1-8min（精度取到分钟）的间隔到达,到达间隔时间值为等概率出现。服务时间为1-6min（精度取到分钟），其出现的概率分别为0.10，0.20，0.30，0.25，0.10，0.05。为了说明问题，这里我们仅仿真10个顾客作为运行长度。并且忽略初始条件的影响。 分析">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.qiuxiangzhi.top&#x2F;post-images&#x2F;paidui.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.qiuxiangzhi.top&#x2F;post-images&#x2F;luoji.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.qiuxiangzhi.top&#x2F;post-images&#x2F;tubiao.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.qiuxiangzhi.top&#x2F;post-images&#x2F;daima.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.qiuxiangzhi.top&#x2F;post-images&#x2F;Modling-All-Analyse.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.qiuxiangzhi.top&#x2F;post-images&#x2F;analyse.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.qiuxiangzhi.top&#x2F;post-images&#x2F;jieguo.png">
+<meta property="og:updated_time" content="2019-10-25T10:29:40.806Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.qiuxiangzhi.top&#x2F;post-images&#x2F;paidui.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="千物语" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Eternal Qiu</h5>
+          <a href="mailto:Eternal@hnu.edu.cn" target="_blank" rel="noopener" title="Eternal@hnu.edu.cn" class="mail">Eternal@hnu.edu.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Eternal0527" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.qiuxiangzhi.top" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-link"></i>
+                旧博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">为了写作业，我写了个Python程序</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">为了写作业，我写了个Python程序</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-09-22T06:11:37.000Z" itemprop="datePublished" class="page-time">
+  2019-09-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#题目"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#分析-搬的课件"><span class="post-toc-number">2.</span> <span class="post-toc-text">分析(搬的课件)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#等概率估算到达时间间隔"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">等概率估算到达时间间隔~</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#不同概率估算服务时间"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">不同概率估算服务时间</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#仿真初始条件"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">仿真初始条件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#仿真逻辑"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">仿真逻辑</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#但，作业是这样的"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">但，作业是这样的</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解决方案"><span class="post-toc-number">3.</span> <span class="post-toc-text">解决方案</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Modeling-Homework"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">为了写作业，我写了个Python程序</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-09-22 14:11:37" datetime="2019-09-22T06:11:37.000Z"  itemprop="datePublished">2019-09-22</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>课堂上老师跟我们讲了这个问题，如何使用Excel进行手动仿真（其实只是讲了一些逻辑而已~）：</p>
+<p>某一排队系统，假定顾客随机地分别以1-8min（精度取到分钟）的间隔到达,到达间隔时间值为等概率出现。服务时间为1-6min（精度取到分钟），其出现的概率分别为0.10，0.20，0.30，0.25，0.10，0.05。为了说明问题，这里我们仅仿真10个顾客作为运行长度。并且忽略初始条件的影响。</p>
+<h1 id="分析-搬的课件"><a href="#分析-搬的课件" class="headerlink" title="分析(搬的课件)"></a>分析(搬的课件)</h1><h2 id="等概率估算到达时间间隔"><a href="#等概率估算到达时间间隔" class="headerlink" title="等概率估算到达时间间隔~"></a>等概率估算到达时间间隔~</h2><p>顾客到达的时间间隔为1~8分钟，各时间出现概率为等概率，因此，其概率为<br>P(x)=1/8=0.125，          x=1,2,3,4,5,6,7,8<br>等概率的问题就是一种均匀分布，可以通过均匀分布随机数的产生来处理。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://www.qiuxiangzhi.top/post-images/paidui.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>这里直接使用1000，你们说，这是为什么呢？！</p>
+<p>哈哈哈，当然是因为等精度啦。</p>
+<h2 id="不同概率估算服务时间"><a href="#不同概率估算服务时间" class="headerlink" title="不同概率估算服务时间"></a>不同概率估算服务时间</h2><p>服务时间到达的概率分别为：0.10，0.20，0.30，0.25，0.10，0.05，对应着1-6min，这里的精度只到5%，理论上来说只要20个数字就可以完成随机概率取值。但是为了精度，精度~</p>
+<h2 id="仿真初始条件"><a href="#仿真初始条件" class="headerlink" title="仿真初始条件"></a>仿真初始条件</h2><p>这里需要预设初始条件，才能进行计算，而初始条件很简单，即第一个顾客的等待时间，开始服务时间，到达时间，到达间隔都为0就是啦。</p>
+<h2 id="仿真逻辑"><a href="#仿真逻辑" class="headerlink" title="仿真逻辑"></a>仿真逻辑</h2><p>仿真逻辑就是下面图示这样子了。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://www.qiuxiangzhi.top/post-images/luoji.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h2 id="但，作业是这样的"><a href="#但，作业是这样的" class="headerlink" title="但，作业是这样的"></a>但，作业是这样的</h2><p>老师：咳咳，那个，这个题目很简单了，你们就用Excel手动仿真吧~<br>我们：哦耶，这还不简单？啥都有了，只要重新算一遍，又不复杂，Excel拉公式走起~</p>
+<p>然后，这个时候。。。老师。。。</p>
+<p>老师：这样吧，我把条件改一改，就 <code>400</code> 个顾客，然后仿真 <code>100</code> 次吧！！！<br>我们：嗯嗯，好啊，反正只要拉公式。。。慢着，，，你说100次？？？</p>
+<p>TM…</p>
+<p>真不是人干的活~</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>那没办法，只好请出还没学的 <code>Python</code> 了，操作Excel文件比起 <code>C++</code> 可友好多了，只是，还没学，咋办呢~</p>
+<p>学！</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://www.qiuxiangzhi.top/post-images/tubiao.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>这里选用的是 <code>xlsxwriter</code> ，也就是“ <code>xlsx writer</code> ”联合体，专门处理 <code>xlsx</code> 文件，这个得pip install一波。然后还使用到了 <code>pandas</code> ，一个很优秀的数据分析工具，但其实可以不用这个。。。</p>
+<p>于是开始码代码（有点点长）：</p>
+<blockquote>
+<p>运行环境：Python 3.7<br>IDE：Pycharm<br>2019.9.23新版更新，增加总体分析统计表输出，并在每一张分表加入分析数据<br>效果如下图片所示：</p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://www.qiuxiangzhi.top/post-images/daima.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p><strong>分析直方图</strong>：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://www.qiuxiangzhi.top/post-images/Modling-All-Analyse.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p><strong>分表分析数据</strong>：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://www.qiuxiangzhi.top/post-images/analyse.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br></pre></td><td class="code"><pre><span class="line">import xlsxwriter</span><br><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line">import matplotlib as mpl</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import os</span><br><span class="line"></span><br><span class="line"># 创建新的 xlsx 文件，名字记得更改</span><br><span class="line">workbook = xlsxwriter.Workbook(&apos;Modeling_Qiu.xlsx&apos;)</span><br><span class="line"></span><br><span class="line"># 实验次数</span><br><span class="line">times = 100</span><br><span class="line"></span><br><span class="line"># 顾客数量</span><br><span class="line">customer = 401</span><br><span class="line"></span><br><span class="line"># 统计数据，主要收集等待时间，以及每个区间的数量</span><br><span class="line">data_flow1 = [[&apos;等待时间区间&apos;, &apos;等待频数&apos;], [&apos;0-0.5&apos;, 0], [&apos;0.5-1&apos;, 0], [&apos;1-1.5&apos;, 0], [&apos;1.5-2&apos;, 0], [&apos;2-2.5&apos;, 0], [&apos;2.5-3&apos;, 0],</span><br><span class="line">                [&apos;3-3.5&apos;, 0], [&apos;3.5-4&apos;, 0], [&apos;4-4.5&apos;, 0], [&apos;4.5-&apos;, 0]]</span><br><span class="line"></span><br><span class="line"># 循环创建100个工作表，并输入数据计算</span><br><span class="line">for exp in range(0, times):</span><br><span class="line"></span><br><span class="line">    # 等待的顾客数量</span><br><span class="line">    wait_customer = 0</span><br><span class="line"></span><br><span class="line">    # 创建工作表</span><br><span class="line">    worksheet = workbook.add_worksheet()</span><br><span class="line"></span><br><span class="line">    # 设置工作表的列宽为20</span><br><span class="line">    worksheet.set_column(0, 20, 20)</span><br><span class="line"></span><br><span class="line">    # 设置字体</span><br><span class="line">    # format_products = workbook.add_format(&#123;&apos;font_name&apos;: &apos;Times New Roman&apos;&#125;)</span><br><span class="line"></span><br><span class="line">    # 设定整个sheet表的单元格的格式</span><br><span class="line">    property = &#123;</span><br><span class="line">        &apos;font_size&apos;: 16,        # 字体大小</span><br><span class="line">        &apos;bold&apos;: False,          # 加粗</span><br><span class="line">        &apos;align&apos;: &apos;center&apos;,      # 水平对齐方式</span><br><span class="line">        &apos;valign&apos;: &apos;vcenter&apos;,    # 垂直对齐方式</span><br><span class="line">        &apos;font_name&apos;: u&apos;楷体&apos;,</span><br><span class="line">        &apos;text_wrap&apos;: False,     # 是否自动换行</span><br><span class="line">    &#125;</span><br><span class="line">    cell_format = workbook.add_format(property)</span><br><span class="line"></span><br><span class="line">    # 在向单元格中写入内容时，加上单元格样式</span><br><span class="line">    # ws.write(row, col, data, cell_format)</span><br><span class="line"></span><br><span class="line">    # 统计数据，每一张分表的数据</span><br><span class="line">    data_flow2 = [[&apos;等待时间区间&apos;, &apos;等待频数&apos;], [&apos;0-0.5&apos;, 0], [&apos;0.5-1&apos;, 0], [&apos;1-1.5&apos;, 0], [&apos;1.5-2&apos;, 0], [&apos;2-2.5&apos;, 0],</span><br><span class="line">                  [&apos;2.5-3&apos;, 0],</span><br><span class="line">                  [&apos;3-3.5&apos;, 0], [&apos;3.5-4&apos;, 0], [&apos;4-4.5&apos;, 0], [&apos;4.5-&apos;, 0]]</span><br><span class="line"></span><br><span class="line">    # 输入数据</span><br><span class="line">    df = pd.DataFrame(&#123;&apos;顾客&apos;: [], &apos;到达时间间隔&apos;: [], &apos;服务时间&apos;: [], &apos;到达时刻&apos;: [], &apos;服务开始时刻&apos;: [], &apos;服务结束时刻&apos;: [], &apos;等待时间&apos;: [], &apos;逗留时间&apos;: [], &apos;服务员空闲时间&apos;: []&#125;)</span><br><span class="line"></span><br><span class="line">    # worksheet.write 函数写入第一行列名，参数分别表示行、列、数据、数据格式。</span><br><span class="line">    for col in range(len(df.columns)):</span><br><span class="line">        worksheet.write(0, col, df.columns[col], cell_format)</span><br><span class="line"></span><br><span class="line">    # 生成一个 9 列 customer 行的随机数组</span><br><span class="line">    data = [[np.random.randint(0, 1000) for j in range(1, 10)] for i in range(1, customer + 1)]</span><br><span class="line"></span><br><span class="line">    # 处理仿真表格数据</span><br><span class="line">    for i in range(1, customer):</span><br><span class="line"></span><br><span class="line">        # 设置行高</span><br><span class="line">        worksheet.set_row(i-1, 30)</span><br><span class="line"></span><br><span class="line">        # 顾客序号</span><br><span class="line">        data[i-1][0] = i</span><br><span class="line"></span><br><span class="line">        # 顾客到达间隔</span><br><span class="line">        if i==1 :</span><br><span class="line">            data[i-1][1] = 0</span><br><span class="line">        else :</span><br><span class="line">            temp = data[i-1][1] / 125</span><br><span class="line">            data[i-1][1] = int(temp) + 1</span><br><span class="line"></span><br><span class="line">        # 顾客服务时间</span><br><span class="line">        if data[i-1][2] &lt; 100:</span><br><span class="line">            data[i-1][2] = 1</span><br><span class="line">        elif data[i-1][2] &lt; 300:</span><br><span class="line">            data[i-1][2] = 2</span><br><span class="line">        elif data[i-1][2] &lt; 600:</span><br><span class="line">            data[i-1][2] = 3</span><br><span class="line">        elif data[i-1][2] &lt; 850:</span><br><span class="line">            data[i-1][2] = 4</span><br><span class="line">        elif data[i-1][2] &lt; 950:</span><br><span class="line">            data[i-1][2] = 5</span><br><span class="line">        else:</span><br><span class="line">            data[i-1][2] = 6</span><br><span class="line"></span><br><span class="line">        # 到达时刻 = 到达时间间隔 + 上一次顾客到达时刻</span><br><span class="line">        if i == 1:</span><br><span class="line">            data[i - 1][3] = 0</span><br><span class="line">        else:</span><br><span class="line">            data[i - 1][3] = data[i - 2][3] + data[i - 1][1]</span><br><span class="line"></span><br><span class="line">        # 服务开始时刻 = max（上一次服务结束时刻，本次到达时刻）</span><br><span class="line">        if i == 1:</span><br><span class="line">            data[i-1][4] = 0</span><br><span class="line">        else:</span><br><span class="line">            data[i-1][4] = max(data[i-2][5], data[i-1][3])</span><br><span class="line"></span><br><span class="line">        # 服务结束时间 = 服务开始时间 + 服务时间</span><br><span class="line">        data[i-1][5] = data[i-1][4] + data[i-1][2]</span><br><span class="line"></span><br><span class="line">        # 等待时间 = 服务开始时刻 - 到达时刻</span><br><span class="line">        data[i-1][6] = data[i-1][4] - data[i-1][3]</span><br><span class="line">        if data[i-1][6] &gt; 0:</span><br><span class="line">            wait_customer += 1</span><br><span class="line"></span><br><span class="line">        # 逗留时间 = 顾客在系统中的时间 = 等待时间 + 服务时间</span><br><span class="line">        data[i - 1][7] = data[i-1][6] + data[i-1][2]</span><br><span class="line"></span><br><span class="line">        # 服务员空闲时间 = 本次服务开始时间 - 上次服务结束时间</span><br><span class="line">        # 如果 &gt; 0，服务员空闲时间 = 该值</span><br><span class="line">        # 其他，服务员空闲时间 = 0</span><br><span class="line">        if i == 1:</span><br><span class="line">            data[i - 1][8]=0</span><br><span class="line">        else:</span><br><span class="line">            if data[i-1][4] - data[i-2][5] &gt; 0:</span><br><span class="line">                data[i - 1][8] = data[i-1][4] - data[i-2][5]</span><br><span class="line">            else:</span><br><span class="line">                data[i - 1][8] = 0</span><br><span class="line"></span><br><span class="line">        # 统计等待时间频次</span><br><span class="line">        if data[i - 1][6] &lt; 0.5:</span><br><span class="line">            data_flow2[1][1] += 1</span><br><span class="line">        elif data[i - 1][6] &lt; 1:</span><br><span class="line">            data_flow2[2][1] += 1</span><br><span class="line">        elif data[i - 1][6] &lt; 1.5:</span><br><span class="line">            data_flow2[3][1] += 1</span><br><span class="line">        elif data[i - 1][6] &lt; 2:</span><br><span class="line">            data_flow2[4][1] += 1</span><br><span class="line">        elif data[i - 1][6] &lt; 2.5:</span><br><span class="line">            data_flow2[5][1] += 1</span><br><span class="line">        elif data[i - 1][6] &lt; 3:</span><br><span class="line">            data_flow2[6][1] += 1</span><br><span class="line">        elif data[i - 1][6] &lt; 3.5:</span><br><span class="line">            data_flow2[7][1] += 1</span><br><span class="line">        elif data[i - 1][6] &lt; 4:</span><br><span class="line">            data_flow2[8][1] += 1</span><br><span class="line">        elif data[i - 1][6] &lt; 4.5:</span><br><span class="line">            data_flow2[9][1] += 1</span><br><span class="line">        else:</span><br><span class="line">            data_flow2[10][1] += 1</span><br><span class="line"></span><br><span class="line">    # 最后一行统计数据，累加计算</span><br><span class="line">    for j in range(1, 10):</span><br><span class="line">        data[400][j-1] = 0</span><br><span class="line">    for i in range(1, customer):</span><br><span class="line">        data[400][1] += data[i-1][1]</span><br><span class="line">        data[400][2] += data[i-1][2]</span><br><span class="line">        data[400][6] += data[i-1][6]</span><br><span class="line">        data[400][7] += data[i-1][7]</span><br><span class="line">        data[400][8] += data[i-1][8]</span><br><span class="line"></span><br><span class="line">    # 最后一行表头，记得改掉 ID</span><br><span class="line">    data[400][0] = &apos;累加结果&apos;</span><br><span class="line"></span><br><span class="line">    # 生成一个 7 列 2 行的随机数组，作为储存分析表的数据</span><br><span class="line">    data_chart = [[&apos;顾客平均等待时间&apos;, &apos;顾客必须等待概率&apos;, &apos;服务台空闲概率&apos;, &apos;平均服务时间&apos;, &apos;平均到达间隔&apos;, &apos;平均等待时间&apos;, &apos;平均花费时间&apos;],</span><br><span class="line">                  [&apos;0&apos;, &apos;0&apos;, &apos;0&apos;, &apos;0&apos;, &apos;0&apos;, &apos;0&apos;, &apos;0&apos;]]</span><br><span class="line"></span><br><span class="line">    # 计算分析表数据</span><br><span class="line">    data_chart[1][0] = data[400][6] / (customer - 1)</span><br><span class="line">    data_chart[1][1] = wait_customer / (customer - 1)</span><br><span class="line">    data_chart[1][2] = data[400][8] / data[399][5]</span><br><span class="line">    data_chart[1][3] = data[400][2] / (customer - 1)</span><br><span class="line">    data_chart[1][4] = data[400][1] / (customer - 1)</span><br><span class="line">    data_chart[1][5] = data[400][6] / (customer - 2)</span><br><span class="line">    data_chart[1][6] = data[400][7] / (customer - 1)</span><br><span class="line"></span><br><span class="line">    # 统计等待时间频次</span><br><span class="line">    if data_chart[1][0] &lt; 0.5:</span><br><span class="line">        data_flow1[1][1] += 1</span><br><span class="line">    elif data_chart[1][0] &lt; 1:</span><br><span class="line">        data_flow1[2][1] += 1</span><br><span class="line">    elif data_chart[1][0] &lt; 1.5:</span><br><span class="line">        data_flow1[3][1] += 1</span><br><span class="line">    elif data_chart[1][0] &lt; 2:</span><br><span class="line">        data_flow1[4][1] += 1</span><br><span class="line">    elif data_chart[1][0] &lt; 2.5:</span><br><span class="line">        data_flow1[5][1] += 1</span><br><span class="line">    elif data_chart[1][0] &lt; 3:</span><br><span class="line">        data_flow1[6][1] += 1</span><br><span class="line">    elif data_chart[1][0] &lt; 3.5:</span><br><span class="line">        data_flow1[7][1] += 1</span><br><span class="line">    elif data_chart[1][0] &lt; 4:</span><br><span class="line">        data_flow1[8][1] += 1</span><br><span class="line">    elif data_chart[1][0] &lt; 4.5:</span><br><span class="line">        data_flow1[9][1] += 1</span><br><span class="line">    else:</span><br><span class="line">        data_flow1[10][1] += 1</span><br><span class="line"></span><br><span class="line">    # worksheet.write 函数写入第一行列名，参数分别表示行、列、数据、数据格式。</span><br><span class="line">    for i in range(1, customer+1):</span><br><span class="line">        for j in range(1, 10):</span><br><span class="line">            worksheet.write(i, j - 1, data[i-1][j-1], cell_format)</span><br><span class="line"></span><br><span class="line">    # 写入表格</span><br><span class="line">    for i in range(1, 3):</span><br><span class="line">        for j in range(1, 8):</span><br><span class="line">            worksheet.write(i - 1, j + 9, data_chart[i - 1][j - 1], cell_format)</span><br><span class="line"></span><br><span class="line">    # 写入表格</span><br><span class="line">    for i in range(1, 12):</span><br><span class="line">        for j in range(1, 3):</span><br><span class="line">            worksheet.write(i + 3, j + 9, data_flow2[i-1][j-1], cell_format)</span><br><span class="line"></span><br><span class="line">    # 测试代码</span><br><span class="line">    # print(np.array(data))</span><br><span class="line">    # print(np.array(data_chart))</span><br><span class="line"></span><br><span class="line">    # 工具图片</span><br><span class="line">    # my_file = &apos;‪D:/pycode/Pycharm/temp.png&apos;</span><br><span class="line">    # shutil.rmtree(&apos;my_file&apos;)</span><br><span class="line">    # if os.path.exists(&apos;temp.png&apos;):</span><br><span class="line">    #    os.remove(&apos;temp.png&apos;)</span><br><span class="line"></span><br><span class="line"># 开始画图</span><br><span class="line">mpl.use(&apos;Agg&apos;)</span><br><span class="line"></span><br><span class="line"># 图表基本信息</span><br><span class="line">font_size = 12  # 字体大小</span><br><span class="line">fig_size = (8, 6)  # 图表大小</span><br><span class="line"></span><br><span class="line"># 图例名称</span><br><span class="line">names = (r&apos;Times&apos;)                           # 姓名</span><br><span class="line"></span><br><span class="line"># 更新字体大小</span><br><span class="line">mpl.rcParams[&apos;font.size&apos;] = font_size</span><br><span class="line"># 更新图表大小</span><br><span class="line">mpl.rcParams[&apos;figure.figsize&apos;] = fig_size</span><br><span class="line"># 设置柱形图宽度</span><br><span class="line">bar_width = 1.0</span><br><span class="line"></span><br><span class="line"># 绘制「小明」的成绩</span><br><span class="line">data_flow2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</span><br><span class="line">data_flow3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</span><br><span class="line">index = np.arange(len(data_flow2))</span><br><span class="line">for i in range(1, 11):</span><br><span class="line">    data_flow2[i-1] = data_flow1[i][1]</span><br><span class="line">    data_flow3[i-1] = data_flow1[i][0]</span><br><span class="line">rects1 = plt.bar(index, data_flow2, bar_width, color=&apos;#0072BC&apos;, label=names[0])</span><br><span class="line"></span><br><span class="line"># 测试代码</span><br><span class="line"># print(data_flow1)</span><br><span class="line"></span><br><span class="line"># X轴标题</span><br><span class="line">plt.xticks(index, data_flow3)</span><br><span class="line"></span><br><span class="line"># y轴范围，最高100，最低0</span><br><span class="line">plt.ylim(ymax=100, ymin=0)</span><br><span class="line"># 图表标题</span><br><span class="line">plt.title(r&apos;Average Waiting Times of Customers, Made by Python&apos;)</span><br><span class="line"># 图例显示在图表下方</span><br><span class="line">plt.legend(loc=&apos;upper center&apos;, bbox_to_anchor=(0.5, -0.03), fancybox=True, ncol=50)</span><br><span class="line"></span><br><span class="line"># 添加数据标签</span><br><span class="line">def add_labels(rects):</span><br><span class="line">    for rect in rects:</span><br><span class="line">        height = rect.get_height()</span><br><span class="line">        plt.text(rect.get_x() + rect.get_width() / 2, height, height, ha=&apos;center&apos;, va=&apos;bottom&apos;)</span><br><span class="line"></span><br><span class="line">        # 柱形图边缘用白色填充，纯粹为了美观</span><br><span class="line">        rect.set_edgecolor(&apos;white&apos;)</span><br><span class="line"></span><br><span class="line"># 添加数据标签，100次实验数据</span><br><span class="line">add_labels(rects1)</span><br><span class="line"></span><br><span class="line"># 图表输出到本地</span><br><span class="line">plt.savefig(&apos;Modling-All-Analyse.png&apos;)</span><br><span class="line"></span><br><span class="line"># 图片插入到 N5</span><br><span class="line"># worksheet.insert_image(&apos;N5&apos;, &apos;times.png&apos;)</span><br><span class="line"></span><br><span class="line"># 关闭保存</span><br><span class="line">workbook.close()</span><br></pre></td></tr></table></figure>
+
+<p><strong>Over，大功告成！</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://www.qiuxiangzhi.top/post-images/jieguo.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-10-25T10:29:40.806Z" itemprop="dateUpdated">2019-10-25 18:29:40</time>
+</span><br>
+
+
+        
+        转载请注明出处，https://blog.qiuxiangzhi.top。
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.qiuxiangzhi.top">
+            <img src="/img/avatar.jpg" alt="Eternal Qiu">
+            Eternal Qiu
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.qiuxiangzhi.top/2019/09/22/Modeling-Homework/&title=《为了写作业，我写了个Python程序》 — 千物语&pic=https://blog.qiuxiangzhi.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.qiuxiangzhi.top/2019/09/22/Modeling-Homework/&title=《为了写作业，我写了个Python程序》 — 千物语&source=有朋自远方来，不亦乐乎~" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.qiuxiangzhi.top/2019/09/22/Modeling-Homework/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《为了写作业，我写了个Python程序》 — 千物语&url=https://blog.qiuxiangzhi.top/2019/09/22/Modeling-Homework/&via=https://blog.qiuxiangzhi.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.qiuxiangzhi.top/2019/09/22/Modeling-Homework/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/09/23/Python-Settings/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">如何配置Python学习环境</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/09/16/Guide-Install-Plant_Simulations_15/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Guide-如何安装Plant_Simulations 15?</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "lWjaSK34W33pDPVqj8C9Sj0u-MdYXbMMI",
+            appKey: "sUkEx0dTtTLiICViamcUemAY",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请作者喝一杯咖啡吧~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Eternal Qiu &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.qiuxiangzhi.top/2019/09/22/Modeling-Homework/&title=《为了写作业，我写了个Python程序》 — 千物语&pic=https://blog.qiuxiangzhi.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.qiuxiangzhi.top/2019/09/22/Modeling-Homework/&title=《为了写作业，我写了个Python程序》 — 千物语&source=有朋自远方来，不亦乐乎~" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.qiuxiangzhi.top/2019/09/22/Modeling-Homework/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《为了写作业，我写了个Python程序》 — 千物语&url=https://blog.qiuxiangzhi.top/2019/09/22/Modeling-Homework/&via=https://blog.qiuxiangzhi.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.qiuxiangzhi.top/2019/09/22/Modeling-Homework/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aQZKDMAwF0dz/0uQADEx/iaRiub2aygTwY6HIkl4vvI7TSr9/vurqE3L/4pIhQ8ayjON29R9AXsH5WXxvMmTI2IfBb30PS1/B/TfJVTJkyJBBgmDKrgVfGTJkyOjcrgb7id8NGTJkLMXgG6qBa4H4I2dxGTJkLMjgJbPv//2R/oYMGTKWYhzh4ofbWqpXWzJkyJjN4AGOtzY74Np+ZMiQMZvRaQnwtiUJsuSge/mJDBkytmGQkhYviqWNz1pK+kfAlSFDxlBGLVzWiv5p3oraDDJkyBjNqI159Y+mtdB8n1DKkCFjB0Y6qpUGRx5eyX6CeC9DhowRDJ7qpf8l1E4Ciq6SIUPG4gxe5Eo39EBnlYdmGTJkbMOoNSl5mazzfTQtIkOGjKEM0rzsfNJpJPA0VIYMGbMZtcvIMFnaniRH2SA1lCFDxlAGOZQSMB/86hf9ZciQsTOjM3jBy3ZpgL4s6smQIWM0g5f4++GYJJS11ypDhox9GP1RsHSj5KUEzQMZMmRsxngqQUyTwtoTZciQsQ8jJaWHWD4EVhwgkyFDxlDGEa5+qzJtT6L7yJAhYzSjFub4sMVTBbjacIYMGTImMdIgWxu/SMe/4uRShgwZGzDSwNcPnXzwojhsIUOGjI0Z6RBYeljljdV/MlMZMmRszOCFuU5rgaSbj/1uyJAhYxFGGkD5ptPAXUtPZciQMZvBj479EJkW3R5uasqQIWM9xhtrCNE/u4NKSgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

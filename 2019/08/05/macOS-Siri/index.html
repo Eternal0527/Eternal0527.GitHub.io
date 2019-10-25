@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>macOS-如何使Siri发声 | 千物语 | 它们都在讲话，你听到了吗</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="macOS,Siri">
+    <meta name="description" content="前言Siri作为智障代表，虽然没有实用价值，但是有它还是会感觉自己的macOS又更像是那么一回事了。下面，我在这唠叨一下如何使你的Siri工作起来，方法很简单，哪里都可以搜索到。 警告请注意，本贴只做技术与学习探讨，不做任何商业和违法用途。同时请各位在实践学习后，于24小时内自行消除。 可能涉及到的法律问题：macOS1014； 如果您是非个人用户或用作商业用途，您应该观看上述材料中所提及问题，并">
+<meta name="keywords" content="macOS,Siri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="macOS-如何使Siri发声">
+<meta property="og:url" content="https:&#x2F;&#x2F;blog.qiuxiangzhi.top&#x2F;2019&#x2F;08&#x2F;05&#x2F;macOS-Siri&#x2F;index.html">
+<meta property="og:site_name" content="千物语">
+<meta property="og:description" content="前言Siri作为智障代表，虽然没有实用价值，但是有它还是会感觉自己的macOS又更像是那么一回事了。下面，我在这唠叨一下如何使你的Siri工作起来，方法很简单，哪里都可以搜索到。 警告请注意，本贴只做技术与学习探讨，不做任何商业和违法用途。同时请各位在实践学习后，于24小时内自行消除。 可能涉及到的法律问题：macOS1014； 如果您是非个人用户或用作商业用途，您应该观看上述材料中所提及问题，并">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-25T10:28:53.854Z">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="千物语" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Eternal Qiu</h5>
+          <a href="mailto:Eternal@hnu.edu.cn" target="_blank" rel="noopener" title="Eternal@hnu.edu.cn" class="mail">Eternal@hnu.edu.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Eternal0527" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.qiuxiangzhi.top" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-link"></i>
+                旧博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">macOS-如何使Siri发声</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">macOS-如何使Siri发声</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-05T00:54:15.000Z" itemprop="datePublished" class="page-time">
+  2019-08-05
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#警告"><span class="post-toc-number">2.</span> <span class="post-toc-text">警告</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前提"><span class="post-toc-number">3.</span> <span class="post-toc-text">前提</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#操作"><span class="post-toc-number">4.</span> <span class="post-toc-text">操作</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#联系我"><span class="post-toc-number">5.</span> <span class="post-toc-text">联系我</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-macOS-Siri"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">macOS-如何使Siri发声</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-05 08:54:15" datetime="2019-08-05T00:54:15.000Z"  itemprop="datePublished">2019-08-05</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><code>Siri</code>作为智障代表，虽然没有实用价值，但是有它还是会感觉自己的<code>macOS</code>又更像是那么一回事了。下面，我在这唠叨一下如何使你的<code>Siri</code>工作起来，方法很简单，哪里都可以搜索到。</p>
+<h1 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h1><p>请注意，本贴只做技术与学习探讨，不做任何商业和违法用途。同时请各位在实践学习后，于24小时内自行消除。</p>
+<p>可能涉及到的法律问题：<a href="https://www.apple.com/legal/sla/docs/macOS1014.pdf" target="_blank" rel="noopener"><strong>macOS1014</strong></a>；</p>
+<p><strong>如果您是非个人用户或用作商业用途，您应该观看上述材料中所提及问题，并不要接触实施下述操作。</strong></p>
+<h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><p>你的<code>/CLOVER/config.plist</code>，然后在<code>机型参数设置/SMBIOS</code>中，SmUUID这一项是空白的，如果不是，可按照教程尝试，但不保证效果。</p>
+<h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><p>只要打开你的<code>/CLOVER/config.plist</code>，然后在<code>机型参数设置/SMBIOS</code>中，将SmUUID这一项，填充即可。</p>
+<p>uuid本身可以有两种生成办法，一是直接在终端输入：<code>uuidgen</code>生成。然后将生成的的<code>uuid</code>复制进去，并确保其他的所有信息都是完整的。</p>
+<p>二则是直接点击<code>Clover Configurator</code>中的魔术棒，选择<code>机型</code>后，软件自行生成所有信息。</p>
+<p>保存后即可重启，查看<code>Siri</code>是否正常工作。若仍不正常工作，确保你的网络是可用的，声卡已经被驱动。</p>
+<p>声卡工作不正常，请看<a href="https://qiuxiangzhi.top/post/macOS-Audio/" target="_blank" rel="noopener"><strong>macOS-声卡驱动</strong></a>。</p>
+<h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a><strong>联系我</strong></h1><p>百度贴吧：<a href="http://tieba.baidu.com/home/main?id=935ee68891e582bbe4bda0e69c89e6848fe8a781e5958ae764?t=1497700361&fr=userbar" target="_blank" rel="noopener"><strong>我傻你有意见啊</strong></a><br>远景ID：<a href="http://i.pcbeta.com/space-uid-4847572.html" target="_blank" rel="noopener"><strong>qiuxiangzhi</strong></a><br>QQ：1941256841，加我请注明来意</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-10-25T10:28:53.854Z" itemprop="dateUpdated">2019-10-25 18:28:53</time>
+</span><br>
+
+
+        
+        转载请注明出处，https://blog.qiuxiangzhi.top。
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.qiuxiangzhi.top">
+            <img src="/img/avatar.jpg" alt="Eternal Qiu">
+            Eternal Qiu
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Siri/" rel="tag">Siri</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/macOS/" rel="tag">macOS</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.qiuxiangzhi.top/2019/08/05/macOS-Siri/&title=《macOS-如何使Siri发声》 — 千物语&pic=https://blog.qiuxiangzhi.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.qiuxiangzhi.top/2019/08/05/macOS-Siri/&title=《macOS-如何使Siri发声》 — 千物语&source=有朋自远方来，不亦乐乎~" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.qiuxiangzhi.top/2019/08/05/macOS-Siri/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《macOS-如何使Siri发声》 — 千物语&url=https://blog.qiuxiangzhi.top/2019/08/05/macOS-Siri/&via=https://blog.qiuxiangzhi.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.qiuxiangzhi.top/2019/08/05/macOS-Siri/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/08/05/macOS-IntelFramBuffer/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">macOS-如何驱动核显/卡FramBuffer？</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/08/01/C++_Install-Guide/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">C++初步认识</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "lWjaSK34W33pDPVqj8C9Sj0u-MdYXbMMI",
+            appKey: "sUkEx0dTtTLiICViamcUemAY",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请作者喝一杯咖啡吧~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Eternal Qiu &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.qiuxiangzhi.top/2019/08/05/macOS-Siri/&title=《macOS-如何使Siri发声》 — 千物语&pic=https://blog.qiuxiangzhi.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.qiuxiangzhi.top/2019/08/05/macOS-Siri/&title=《macOS-如何使Siri发声》 — 千物语&source=有朋自远方来，不亦乐乎~" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.qiuxiangzhi.top/2019/08/05/macOS-Siri/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《macOS-如何使Siri发声》 — 千物语&url=https://blog.qiuxiangzhi.top/2019/08/05/macOS-Siri/&via=https://blog.qiuxiangzhi.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.qiuxiangzhi.top/2019/08/05/macOS-Siri/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3a0U7DQAwEwP7/T8MrErRZ2ylSfZMnVNLkJpWsi9ePR3x8vTx+nvP6/Pwuj3ccGBgYH8vIl5gs9Pcicmr+OP6gYmBgHMB4VsF657x+BHnBTe6LgYGBUS2aeeHOyzoGBgbGhJGX1Ncbx2SbiIGBgdG7XNL1Sh5QtUBjYGCcxsgX9/9/vyXfwMDA+CjGV/FItob3FutoVRgYGKsZ+W0mYxbVqKA5loGBgbGacdcQ2L0NuOonGBgYWxl5fJgPe+VttWTMIirZGBgYqxmTgjvh5U29pGRjYGDsZkzKax4r5g27XmnGwMA4hzEJLPOCmw9VFIo4BgbGaka1udYbj+jBqo8VAwNjKyMPC6ut/EJTrDiEcdE1xMDAWMeojkckfbtqSNC7ztN9LgYGxjrGJHrM2b0B1nKOgYGBsZoxaZxNXmLzaOGiZGNgYKxm5H316jBrb7mT4QwMDIxzGPknvYGJanktBwkYGBhLGXnEWJ1t6A1wJGu4+B0wMDAOYNw18hXdfvDdi4KLgYFxDKNXQKsvsTcEDBgYGAcw8qVUm3T5Hasx59OxMAwMjEWMSQwwCTWr0ebFNTEwMFYzqmFhvr2rttLuasxhYGBsZUxaXb3xiDy8zDeXGBgYJzB6oWM17Hz7uzgGBgbGeNs3GfK4KNYYGBgY4xZ/sumclGwMDIwTGNUwYPKim8QAb2y3YWBgfCAjf3Xs/TePFqpUDAyMAxjfq9WTYXkzHZ8AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

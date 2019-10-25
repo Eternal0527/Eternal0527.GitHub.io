@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>千物语</title>
+  <icon>https://blog.qiuxiangzhi.top/icon.png</icon>
+  <subtitle>它们都在讲话，你听到了吗</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://blog.qiuxiangzhi.top/"/>
+  <updated>2019-10-25T10:28:33.218Z</updated>
+  <id>https://blog.qiuxiangzhi.top/</id>
+  
+  <author>
+    <name>Eternal Qiu</name>
+    <email>eternal@hnu.edu.cn</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>macOS-PM981安装黑苹果办法</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/10/20/macOS-PM981/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/10/20/macOS-PM981/</id>
+    <published>2019-10-19T16:03:39.000Z</published>
+    <updated>2019-10-25T10:28:33.218Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;​       
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="macOS" scheme="https://blog.qiuxiangzhi.top/tags/macOS/"/>
+    
+      <category term="PM981" scheme="https://blog.qiuxiangzhi.top/tags/PM981/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如果微信没给你国旗，自己做一面怎样？</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/09/26/Avator-Wechat/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/09/26/Avator-Wechat/</id>
+    <published>2019-09-26T07:48:43.000Z</published>
+    <updated>2019-10-25T13:18:59.191Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;最近比较火的一个现象是，朋友圈的人疯狂艾特微信官方，请求得到一面国旗。&lt;/p&gt;
+&lt;figure
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Avator" scheme="https://blog.qiuxiangzhi.top/tags/Avator/"/>
+    
+      <category term="Python" scheme="https://blog.qiuxiangzhi.top/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何配置Python学习环境</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/09/23/Python-Settings/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/09/23/Python-Settings/</id>
+    <published>2019-09-23T12:20:16.000Z</published>
+    <updated>2019-10-25T10:30:04.226Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;如果你也是在校学生，想学习Python，还没有接触过编程。那么Python的配置就是一个比较小的坎，以及IDE该如何选择，都是一个纠结的小问题。&lt;/p&gt;
+&lt;h1 id=&quot;选择&quot;&gt;&lt;a href=&quot;#选择&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Python" scheme="https://blog.qiuxiangzhi.top/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为了写作业，我写了个Python程序</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/09/22/Modeling-Homework/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/09/22/Modeling-Homework/</id>
+    <published>2019-09-22T06:11:37.000Z</published>
+    <updated>2019-10-25T10:29:40.806Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Python" scheme="https://blog.qiuxiangzhi.top/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Guide-如何安装Plant_Simulations 15?</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/09/16/Guide-Install-Plant_Simulations_15/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/09/16/Guide-Install-Plant_Simulations_15/</id>
+    <published>2019-09-16T01:19:57.000Z</published>
+    <updated>2019-10-25T10:24:50.894Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Install" scheme="https://blog.qiuxiangzhi.top/tags/Install/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何使用Hexo+Github建站（Coding同理）</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/08/27/Hexo-Github/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/08/27/Hexo-Github/</id>
+    <published>2019-08-27T01:39:14.000Z</published>
+    <updated>2019-10-25T10:25:17.746Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;创建Pages服务&quot;&gt;&lt;a href=&quot;#创建Pages服务&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Hexo" scheme="https://blog.qiuxiangzhi.top/tags/Hexo/"/>
+    
+      <category term="Github" scheme="https://blog.qiuxiangzhi.top/tags/Github/"/>
+    
+      <category term="建站" scheme="https://blog.qiuxiangzhi.top/tags/%E5%BB%BA%E7%AB%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux-如何安装Ubuntu？</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/08/07/Linux-Install-Ubuntu/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/08/07/Linux-Install-Ubuntu/</id>
+    <published>2019-08-07T01:15:04.000Z</published>
+    <updated>2019-10-25T10:25:51.048Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Ubuntu" scheme="https://blog.qiuxiangzhi.top/tags/Ubuntu/"/>
+    
+      <category term="Linux" scheme="https://blog.qiuxiangzhi.top/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++学习日记三</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_Third/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_Third/</id>
+    <published>2019-08-06T09:07:30.000Z</published>
+    <updated>2019-10-25T10:24:26.848Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="学习日记" scheme="https://blog.qiuxiangzhi.top/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="C++" scheme="https://blog.qiuxiangzhi.top/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++学习日记二</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_Second/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_Second/</id>
+    <published>2019-08-06T08:00:13.000Z</published>
+    <updated>2019-10-25T10:23:59.743Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="学习日记" scheme="https://blog.qiuxiangzhi.top/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="C++" scheme="https://blog.qiuxiangzhi.top/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++学习日记一</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_First/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/08/06/C++_Learning_First/</id>
+    <published>2019-08-06T02:26:14.000Z</published>
+    <updated>2019-10-25T10:23:14.105Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="学习日记" scheme="https://blog.qiuxiangzhi.top/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="C++" scheme="https://blog.qiuxiangzhi.top/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>macOS-如何驱动核显/卡FramBuffer？</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/08/05/macOS-IntelFramBuffer/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/08/05/macOS-IntelFramBuffer/</id>
+    <published>2019-08-05T01:17:20.000Z</published>
+    <updated>2019-10-25T10:28:05.714Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;如果你的核显显存只有7M，那么你的macOS体验绝对是无比糟糕的。那么，我们应该怎么解决呢？&lt;/p&gt;
+&lt;h1 id=&quot;警告&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="macOS" scheme="https://blog.qiuxiangzhi.top/tags/macOS/"/>
+    
+      <category term="核显" scheme="https://blog.qiuxiangzhi.top/tags/%E6%A0%B8%E6%98%BE/"/>
+    
+      <category term="FramBuffer" scheme="https://blog.qiuxiangzhi.top/tags/FramBuffer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>macOS-如何使Siri发声</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/08/05/macOS-Siri/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/08/05/macOS-Siri/</id>
+    <published>2019-08-05T00:54:15.000Z</published>
+    <updated>2019-10-25T10:28:53.854Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="macOS" scheme="https://blog.qiuxiangzhi.top/tags/macOS/"/>
+    
+      <category term="Siri" scheme="https://blog.qiuxiangzhi.top/tags/Siri/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++初步认识</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/08/01/C++_Install-Guide/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/08/01/C++_Install-Guide/</id>
+    <published>2019-08-01T03:45:42.000Z</published>
+    <updated>2019-10-25T10:21:59.858Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;一个标准的学习过程应该从 HelloWorld.exe 开始，初步代码如下&lt;br&gt;&lt;code&gt;#include
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://blog.qiuxiangzhi.top/tags/C/"/>
+    
+      <category term="Atom" scheme="https://blog.qiuxiangzhi.top/tags/Atom/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Blog-Gridea与Code Pages</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/07/26/Blog-Code-Guide/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/07/26/Blog-Code-Guide/</id>
+    <published>2019-07-26T15:41:56.000Z</published>
+    <updated>2019-10-25T10:20:39.558Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;对于想要在网上有自己的一个博客网站的人来说，常用的有 &lt;code&gt;Wordpress&lt;/code&gt;、&lt;code&gt;Typecho&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Blog" scheme="https://blog.qiuxiangzhi.top/tags/Blog/"/>
+    
+      <category term="Code Pages" scheme="https://blog.qiuxiangzhi.top/tags/Code-Pages/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Blog-Gridea与Github Pages</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/07/26/Blog-Github-Guide/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/07/26/Blog-Github-Guide/</id>
+    <published>2019-07-26T15:10:29.000Z</published>
+    <updated>2019-10-25T10:21:23.601Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;当下大多数人可能已经对 &lt;code&gt;Github Pages&lt;/code&gt; 不再陌生，它是很多喜欢写文章的人第一次接触的&lt;strong&gt;用于免费搭建博客&lt;/strong&gt;建一个简洁却又不失优雅的个人博客
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Blog" scheme="https://blog.qiuxiangzhi.top/tags/Blog/"/>
+    
+      <category term="Github Pages" scheme="https://blog.qiuxiangzhi.top/tags/Github-Pages/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>macOS驱动-声卡驱动</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/07/22/macOS-Audio/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/07/22/macOS-Audio/</id>
+    <published>2019-07-22T12:58:40.000Z</published>
+    <updated>2019-10-25T10:26:33.228Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="macOS" scheme="https://blog.qiuxiangzhi.top/tags/macOS/"/>
+    
+      <category term="声卡" scheme="https://blog.qiuxiangzhi.top/tags/%E5%A3%B0%E5%8D%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>macOS驱动-电池补丁</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/07/16/macOS-Batttery/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/07/16/macOS-Batttery/</id>
+    <published>2019-07-16T02:45:23.000Z</published>
+    <updated>2019-10-25T10:26:57.525Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="macOS" scheme="https://blog.qiuxiangzhi.top/tags/macOS/"/>
+    
+      <category term="电池补丁" scheme="https://blog.qiuxiangzhi.top/tags/%E7%94%B5%E6%B1%A0%E8%A1%A5%E4%B8%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>macOS安装-小白入门</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/07/15/macOS-Guide/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/07/15/macOS-Guide/</id>
+    <published>2019-07-15T13:55:00.000Z</published>
+    <updated>2019-10-25T10:27:37.736Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;该教程我其实已经在贴吧发过一个&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="macOS" scheme="https://blog.qiuxiangzhi.top/tags/macOS/"/>
+    
+      <category term="安装" scheme="https://blog.qiuxiangzhi.top/tags/%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+</feed>
