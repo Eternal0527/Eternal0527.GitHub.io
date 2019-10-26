@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.qiuxiangzhi.top/"/>
-  <updated>2019-10-25T10:28:33.218Z</updated>
+  <updated>2019-10-26T07:57:33.748Z</updated>
   <id>https://blog.qiuxiangzhi.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为什么建立博客？！</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/10/26/Thinking-One/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/10/26/Thinking-One/</id>
+    <published>2019-10-26T07:32:13.000Z</published>
+    <updated>2019-10-26T07:57:33.748Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;​        我有两个所谓的博客，起初也确实是为了制作&lt;code&gt;自嗨&lt;/code&gt;，写一些文章，或&lt;code&gt;吐槽&lt;/code&gt;或【&lt;code&gt;生活&lt;/code&gt;】分享。现在却变成了一个折腾的东西，这是为什么？我的心路历程？&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="博客" scheme="https://blog.qiuxiangzhi.top/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="心情" scheme="https://blog.qiuxiangzhi.top/tags/%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
   
   <entry>
     <title>macOS-PM981安装黑苹果办法</title>
@@ -224,9 +245,9 @@
     
     
     
-      <category term="学习日记" scheme="https://blog.qiuxiangzhi.top/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/"/>
-    
       <category term="C++" scheme="https://blog.qiuxiangzhi.top/tags/C/"/>
+    
+      <category term="学习日记" scheme="https://blog.qiuxiangzhi.top/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
@@ -251,9 +272,9 @@
     
     
     
-      <category term="学习日记" scheme="https://blog.qiuxiangzhi.top/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/"/>
-    
       <category term="C++" scheme="https://blog.qiuxiangzhi.top/tags/C/"/>
+    
+      <category term="学习日记" scheme="https://blog.qiuxiangzhi.top/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
@@ -278,9 +299,9 @@
     
     
     
-      <category term="学习日记" scheme="https://blog.qiuxiangzhi.top/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/"/>
-    
       <category term="C++" scheme="https://blog.qiuxiangzhi.top/tags/C/"/>
+    
+      <category term="学习日记" scheme="https://blog.qiuxiangzhi.top/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
