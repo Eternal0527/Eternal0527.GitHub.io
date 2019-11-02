@@ -6,15 +6,35 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.qiuxiangzhi.top/"/>
-  <updated>2019-10-26T07:57:34.000Z</updated>
+  <updated>2019-11-02T04:16:42.111Z</updated>
   <id>https://blog.qiuxiangzhi.top/</id>
   
   <author>
     <name>Eternal Qiu</name>
-    <email>eternal@hnu.edu.cn</email>
+    <email>eternal0527@qq.com</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>aboutDisk</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/11/02/aboutDisk/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/11/02/aboutDisk/</id>
+    <published>2019-11-02T03:07:14.000Z</published>
+    <updated>2019-11-02T04:16:42.111Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MBR？GUID？GPT？Legacy？UEFI？ESP？NTFS？EXT？FAT？EXFAT？&lt;/p&gt;
+&lt;p&gt;这些到底是什么？跟磁盘有关系，有什么关系？我这个业余的家伙聊一聊这些东西到底是什么。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Disk" scheme="https://blog.qiuxiangzhi.top/tags/Disk/"/>
+    
+  </entry>
   
   <entry>
     <title>为什么建立博客？！</title>
