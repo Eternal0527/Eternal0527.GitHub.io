@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.qiuxiangzhi.top/"/>
-  <updated>2019-11-02T06:47:37.426Z</updated>
+  <updated>2019-11-02T09:11:52.817Z</updated>
   <id>https://blog.qiuxiangzhi.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小米笔记本Pro后期完善</title>
+    <link href="https://blog.qiuxiangzhi.top/2019/11/02/XiaoMi-NoteBookPro/"/>
+    <id>https://blog.qiuxiangzhi.top/2019/11/02/XiaoMi-NoteBookPro/</id>
+    <published>2019-11-02T08:31:18.000Z</published>
+    <updated>2019-11-02T09:11:52.817Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;​        小米笔记本Pro对于喜欢黑苹果的人来说，有两个比较难以让人忍受的地方，一个是PM981，已经有办法可以解决掉，那么另一个无线网卡也会这么顺畅吗？？？&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="macOS" scheme="https://blog.qiuxiangzhi.top/tags/macOS/"/>
+    
+      <category term="小米笔记本Pro" scheme="https://blog.qiuxiangzhi.top/tags/%E5%B0%8F%E7%B1%B3%E7%AC%94%E8%AE%B0%E6%9C%ACPro/"/>
+    
+  </entry>
   
   <entry>
     <title>磁盘格式简析</title>
@@ -514,33 +535,6 @@
       <category term="macOS" scheme="https://blog.qiuxiangzhi.top/tags/macOS/"/>
     
       <category term="电池补丁" scheme="https://blog.qiuxiangzhi.top/tags/%E7%94%B5%E6%B1%A0%E8%A1%A5%E4%B8%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>macOS安装-小白入门</title>
-    <link href="https://blog.qiuxiangzhi.top/2019/07/15/macOS-Guide/"/>
-    <id>https://blog.qiuxiangzhi.top/2019/07/15/macOS-Guide/</id>
-    <published>2019-07-15T13:55:00.000Z</published>
-    <updated>2019-10-26T07:13:42.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;该教程我其实已经在贴吧发过一个&lt;a
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="macOS" scheme="https://blog.qiuxiangzhi.top/tags/macOS/"/>
-    
-      <category term="安装" scheme="https://blog.qiuxiangzhi.top/tags/%E5%AE%89%E8%A3%85/"/>
     
   </entry>
   
